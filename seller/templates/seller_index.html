@@ -1,0 +1,81 @@
+{% extends 'seller_header.html' %}
+{% load static %}
+      <!-- banner section start -->
+    {% block content %}
+      <div class="banner_section banner_bg">
+         <div class="container-fluid">
+            <div class="read_bt"><a href="#">Home</a></div>
+            <div id="my_slider" class="carousel slide" data-ride="carousel">
+               <div class="carousel-inner">
+                  <div class="carousel-item active">
+                     <div class="taital_main">
+                        <div class="taital_left">
+                           <h1 class="banner_taital">My Orders</h1>
+                        </div>
+                        <h1 class="banner_taital">Responsive Hover Table</h1>
+                     </div>
+                  </div>
+                  <div class="carousel-item">
+                     <div class="taital_main">
+                        <div class="taital_left">
+                         </div>
+                        <div class="taital_right">
+                     </div>
+                  </div>
+                  <div class="carousel-item">
+                     <div class="taital_main">
+                        <div class="taital_left">
+                           <div class="read_bt"><a href="#">Home</a></div>
+                         </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="card-body table-responsive p-0">
+                <table class="table table-hover text-nowrap">
+                  <thead>
+                    <tr>
+                      <th>ID</th>
+                      <th>User</th>
+                      <th>Date</th>
+                      <th>Status</th>
+                      <th>Reason</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>183</td>
+                      <td>John Doe</td>
+                      <td>11-7-2014</td>
+                      <td><span class="tag tag-success">Approved</span></td>
+                      <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
+                    </tr>
+                    <tr>
+                      <td>219</td>
+                      <td>Alexander Pierce</td>
+                      <td>11-7-2014</td>
+                      <td><span class="tag tag-warning">Pending</span></td>
+                      <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
+                    </tr>
+                    <tr>
+                      <td>657</td>
+                      <td>Bob Doe</td>
+                      <td>11-7-2014</td>
+                      <td><span class="tag tag-primary">Approved</span></td>
+                      <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
+                    </tr>
+                    <tr>
+                      <td>175</td>
+                      <td>Mike Doe</td>
+                      <td>11-7-2014</td>
+                      <td><span class="tag tag-danger">Denied</span></td>
+                      <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+         </div>
+      <!-- banner section end -->
+      <!-- about section start -->
+      
+{% endblock %}

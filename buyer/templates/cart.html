@@ -1,0 +1,207 @@
+{% extends "header.html" %}
+{% load static %}
+{% block content %}
+  
+
+<!-- header section end -->
+      <!-- banner section start -->
+      <div class="banner_section layout_padding">
+         <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+               <div class="carousel-item active">
+                  <div class="container">
+                     <div class="row">
+                        <div class="col-sm-6">
+                           <h1 class="banner_taital">Beauty <br>Kit</h1>
+                           <p class="banner_text">Ncididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo</p>
+                           <div class="read_bt"><a href="#">Buy Now</a></div>
+                        </div>
+                        <div class="col-sm-6">
+                           <div class="banner_img"><img src="{% static 'images/banner-img.png' %}"></div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="carousel-item">
+                  <div class="container">
+                     <div class="row">
+                        <div class="col-sm-6">
+                           <h1 class="banner_taital">Beauty <br>Kit</h1>
+                           <p class="banner_text">Ncididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo</p>
+                           <div class="read_bt"><a href="#">Buy Now</a></div>
+                        </div>
+                        <div class="col-sm-6">
+                           <div class="banner_img"><img src="{% static 'images/banner-img.png' %}"></div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="carousel-item">
+                  <div class="container">
+                     <div class="row">
+                        <div class="col-sm-6">
+                           <h1 class="banner_taital">Beauty <br>Kit</h1>
+                           <p class="banner_text">Ncididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo</p>
+                           <div class="read_bt"><a href="#">Buy Now</a></div>
+                        </div>
+                        <div class="col-sm-6">
+                           <div class="banner_img"><img src="{% static 'images/banner-img.png' %}"></div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="carousel-item">
+                  <div class="container">
+                     <div class="row">
+                        <div class="col-sm-6">
+                           <h1 class="banner_taital">Beauty <br>Kit</h1>
+                           <p class="banner_text">Ncididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo</p>
+                           <div class="read_bt"><a href="#">Buy Now</a></div>
+                        </div>
+                        <div class="col-sm-6">
+                           <div class="banner_img"><img src="{% static 'images/banner-img.png' %}"></div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- banner section end -->
+      <!-- product section start -->
+      <div class="product_section layout_padding">
+         <div class="container">
+            <div class="row">
+               <div class="col-sm-12">
+                  <h1 class="product_taital">Our Products</h1>
+                  <p class="product_text">incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation</p>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="table-responsiv">
+        <table class="timetable_sub">
+            <thead>
+                <tr>
+                    <th>Picture</th>
+                    <th>Product Name</th>
+                    <th>Price</th>
+                    <th>Remove</th>
+                </tr>
+            </thead>
+            <tbody>
+               {% for i in cart_list %}
+               <tr>
+                  <td><img src="{{i.product.pic.url}} " style="max-width: 100px; max-height: 100px;" class="image_1"></td>
+                  <td><h4 class="bursh_text">{{i.product.product_name}}</h4></td>
+                  <td>{{i.product.price}}</td>
+                  <td><li class="active m-5"><a href="{% url 'remove_product' i.id %}">X</a></li>          </td>
+               </tr>
+               {% endfor %}
+            </tbody>
+        </table>
+      </div>   
+           
+      
+      
+           <div
+           class="d-flex flex-wrap justify-content-between align-items-center pb-4"
+         >
+           <div class="d-flex">
+             {% comment %} <div class="text-right mt-4 mr-5">
+               <label class="text-muted font-weight-normal m-0"
+                 >Discount</label
+               >
+               <div class="text-large"><strong>$20</strong></div>
+             </div> {% endcomment %}
+             <div class="text-right mt-4">
+               <label class="text-muted font-weight-normal m-0"
+                 >Total price</label>
+               >
+               <div class="text-large"><strong> rs. {{total_price}}</strong></div>
+             </div>
+           </div>
+         </div>
+         <div class="float-right">
+           <a href="{% url 'index' %}"><button
+             type="button"
+             class="btn btn-lg btn-default md-btn-flat mt-2 mr-3"
+           >
+             Back to shopping
+           </button></a>
+           
+         </div>
+       </div>
+     </form>
+   </div>
+   <button type="submit" class="btn btn-lg btn-primary mt-2" id="pay-btn">
+     Make A Payment
+   </button>
+ </div>
+ <style type="text/css">
+   body {
+     margin-top: 20px;
+     background: #eee;
+   }
+   .ui-w-40 {
+     width: 40px !important;
+     height: auto;
+   }
+
+   .card {
+     box-shadow: 0 1px 15px 1px rgba(52, 40, 104, 0.08);
+   }
+
+   .ui-product-color {
+     display: inline-block;
+     overflow: hidden;
+     margin: 0.144em;
+     width: 0.875rem;
+     height: 0.875rem;
+     border-radius: 10rem;
+     -webkit-box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.15) inset;
+     box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.15) inset;
+     vertical-align: middle;
+   }
+ </style>
+ <script type="text/javascript"></script>
+ <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+ <script>
+   var options = {
+     
+     // Enter the Key ID generated from the Dashboard
+     key: "{{ razorpay_merchant_key }}",
+     
+     // Amount is in currency subunits.
+     // Default currency is INR. Hence,
+     // 50000 refers to 50000 paise
+     amount: "{{ razorpay_amount }}",
+     currency: "{{ currency }}",
+     
+     // Your/store name.
+     name: "Dj Razorpay",
+     
+     // Pass the `id` obtained in the response of Step 1
+     order_id: "{{ razorpay_order_id }}",
+     callback_url: "{{ callback_url }}",
+   };
+   
+   // initialise razorpay with the options.
+   var rzp1 = new Razorpay(options);
+   
+   // add event listener to the payment button.
+   document.getElementById("pay-btn").onclick = function (e) {
+     rzp1.open();
+     e.preventDefault();
+   };
+ </script>
+</body>
+</html>
+
+
+      <!-- product section end -->
+      <!-- contact section end -->
+     
+
+
+{% endblock %}

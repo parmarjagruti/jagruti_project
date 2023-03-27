@@ -1,0 +1,82 @@
+{% extends 'seller_header.html' %}
+{% load static %}
+                  
+
+      <!-- header section end -->
+      <!-- banner section start -->
+      {% block content %}
+      <div class="banner_section banner_bg">
+         <div class="container-fluid">
+            <div id="my_slider" class="carousel slide" data-ride="carousel">
+               <div class="carousel-inner">
+                  <div class="carousel-item active">
+                     <div class="taital_main">
+                        <div class="taital_left">
+                           <h1 class="banner_taital">Edit Profile</h1>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="carousel-item">
+                     <div class="taital_main">
+                        <div class="taital_left">
+                           <div class="read_bt"><a href="#">Home</a></div>
+                           <h1 class="banner_taital">Edit Profile</h1>
+                        </div>
+                     </div>
+                  </div>  
+               </div> 
+
+               <form action="{% url 'seller_edit_profile' %}" method="post" enctype="multipart/form-data" ></form>
+               {% csrf_token %}
+               <div class="carousel-item">
+                  <div class="taital_main">
+                     <div class="taital_left">
+                        <h1 class="banner_taital">General</h1>
+                        
+                     </div>
+                  </div>
+               </div>
+               <a class="carousel-control-prev" href="#my_slider" role="button" data-slide="prev">
+               <i class='fa fa-arrow-up'></i>
+               </a>
+            </div>
+         </div>
+      </div>
+
+      <div class="form-group">
+         <label for="inputName">Full Name</label>
+         <input type="text" id="inputName" class="form-control" name="full_name" value="{{seller_data.full_name}}">
+      </div>
+      <div class="form-group">
+         <label for="inputName">GST Number</label>
+         <input type="text" id="inputName" class="form-control" name="gst_no" value="{{seller_data.gst_no}}">
+       </div>
+       <div class="form-group">
+         <label for="inputDescription">Address</label>
+         <textarea id="inputDescription" name="address" class="form-control" rows="4">{{seller_data.address}}</textarea>
+       </div>
+       <div class="form-group">
+         <label for="inputName">Email</label>
+         <input type="email" class="form-control" id="inputName" name="email" value="{{seller_data.email}}"  disabled>
+       </div>
+       <div class="form-group">
+         <label for="inputClientCompany">Profile Picture</label>
+         <input type="file" id="inputClientCompany" class="form-control" name="pic">
+       </div>
+
+
+       <div class="row">
+         <div class="col-12">
+           <input type="submit" value="Save Changes" >
+         </div>
+       </div>
+     </form>
+      <!-- banner section end -->
+      <!-- about section start -->
+
+      <!-- Blog section end -->
+      <!-- contact section start -->
+      <!-- contact section end -->
+      <!-- footer section start -->
+
+{% endblock %}
